@@ -21,6 +21,10 @@ function renderPlayer(player) {
 
   // append the element to the container
   playerContainer.append(playerDiv)
+  playerDiv.lastElementChild.addEventListener("click", (event) => {
+            player.likes = player.likes + 1
+            playerDiv.querySelector(".likes").textContent = `${player.likes} likes`
+  })
 }
 
 // for each player in the array, render to the DOM
@@ -29,9 +33,9 @@ PLAYERS.forEach(renderPlayer)
 /***** End of Starter Code ****/
 
 
-
-
 /***** Deliverable 1 *****/
+headerColor = document.querySelector("h1#header")
+headerColor.addEventListener("click", (event) => toggleColor(event.target))
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -42,5 +46,21 @@ function toggleColor(element) {
 
 
 /***** Deliverable 2 *****/
-
+const playerForm = document.getElementsByTagName('input')
+const newPlayerForm = document.querySelector("form#new-player-form")
+newPlayerForm.addEventListener("submit", handleformsubmit)
+function handleformsubmit(event){
+      event.preventDefault()
+      const player = {
+            number: playerForm[0].value,
+            name: playerForm[1].value,
+            nickname: playerForm[2].value,
+            photo: playerForm[3].value,
+            likes: 0
+                    }
+      renderPlayer(player)
+      newPlayerForm.reset()
+}
 /***** Deliverable 3 *****/
+
+/****   Line 24  --  Line 27    ****/
