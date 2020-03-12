@@ -26,7 +26,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+It felt easy, I mean the code was there already
 ```
 
 ## Deliverable 2: Create Player
@@ -43,7 +43,8 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Once I got the EventListener on the correct item(form)
+getting the values I needed was easier with the debugger and the console
 ```
 
 ## Deliverable 3: Like Button
@@ -54,5 +55,11 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
+https://dailypost.ng/wp-content/uploads/2015/08/jordon-ibe-liverpool_1.jpg
+https://s3.amazonaws.com/charitycdn/cache/resizedcrop-8e5157877143d074eec1f4dac97837b1-840x480.jpg
+https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/69/thumb_68256_default_news_size_5.jpeg
+https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0002/01/thumb_100226_default_news_size_5.jpeg
+The above are to get images for the creation of new players
 
+After today's lecture from Liverpool's No 1 fan it was actually easy
 ```
