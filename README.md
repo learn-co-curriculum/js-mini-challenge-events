@@ -26,7 +26,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+lost my notes transfering files
 ```
 
 ## Deliverable 2: Create Player
