@@ -18,18 +18,18 @@ function renderPlayer(player) {
     <p class="likes">${player.likes} likes</p>
     <button class="like-button">❤️</button>
   `
-  //   // Nested Event Listeners Strategy
-  //   // access like button for each player created; note we are using "playerDiv" and not "document" for querySelector because we want this for each player
-  // const likeButton = playerDiv.querySelector(".like-button")
-  // // create the listener for when the like button is clicked; attach the event for when it is clicked
-  // likeButton.addEventListener("click", event => {
-  //   // access the players like count
-  //   const likeCount = playerDiv.querySelector(".likes")
-  //   // update player like count
-  //   player.likes = player.likes + 1
-  //   // display player like amount
-  //   likeCount.textContent = `${player.likes} likes`
-  // })
+    // Nested Event Listeners Strategy
+    // access like button for each player created; note we are using "playerDiv" and not "document" for querySelector because we want this for each player
+  const likeButton = playerDiv.querySelector(".like-button")
+  // create the listener for when the like button is clicked; attach the event for when it is clicked
+  likeButton.addEventListener("click", event => {
+    // access the players like count
+    const likeCount = playerDiv.querySelector(".likes")
+    // update player like count
+    player.likes = player.likes + 1
+    // display player like amount
+    likeCount.textContent = `${player.likes} likes`
+  })
 
   // append the element to the container
   playerContainer.append(playerDiv)
