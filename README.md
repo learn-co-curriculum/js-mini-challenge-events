@@ -1,5 +1,23 @@
 # JS Mini Challenge: Event Handling
 
+## Instructions
+
+Fork this repo, then run `git clone` to download it locally. Then `cd` into the downloaded directory and open it in your text editor with `code .`.
+
+## Submitting
+
+When you’re finished, run the following commands in your terminal to submit:
+
+```
+git add .
+git commit -m 'Done'
+git push
+```
+
+To get feedback on your code, make a [pull request from your forked repo](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
+
+## Assignment
+
 In this challenge, we're going to keep working on Ian's Liverpool fan page and give our users the ability to:
 
 - Toggle the header color
