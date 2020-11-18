@@ -1,30 +1,58 @@
 /***** Beginning of Starter Code ****/
+const goalList = document.querySelector("#goals")
 
-const playerContainer = document.querySelector(".player-container")
+/*
+renderGoal function 
+- takes in a goal object { id, link, description}
+- creates elements:
+  <li data-id="{goal id}">
+    <p>{goal description}</p>
+    <a href="{goal link}" target="_blank">{goal link}</a>
+  </li>
+- appends to the goalList
+*/ 
+function renderGoal(goal) {
+  const li = document.createElement("li")
+  li.dataset.id = goal.id
 
-// render one player to the DOM
-function renderPlayer(player) {
-  // create an element for the outer div
-  const playerDiv = document.createElement("div")
+  const p = document.createElement("p")
+  p.textContent = goal.description
 
-  // set attributes on the outer div
-  playerDiv.className = "player"
-  playerDiv.dataset.number = player.number
+  const a = document.createElement("a")
+  a.href = goal.link
+  a.target = "_blank"
+  a.textContent = goal.link
+  
+  li.append(p, a)
 
-  // use innerHTML to create any child elements of the div
-  playerDiv.innerHTML = `
-    <h3>${player.name} (<em>${player.nickname}</em>)</h3>
-    <img src="${player.photo}" alt="${player.name}">
-    <p class="likes">${player.likes} likes</p>
-    <button class="like-button">❤️</button>
-  `
-
-  // append the element to the container
-  playerContainer.append(playerDiv)
+  goalList.append(li)
 }
 
-// for each player in the array, render to the DOM
-PLAYERS.forEach(renderPlayer)
+/*
+renderPlayer function
+- takes in a player object { name, nickname, photo, likes, goals }
+- updates the DOM using the player info
+- renders the goals using the renderGoal function
+*/ 
+function renderPlayer(player) {
+  const img = document.querySelector(".player img")
+  img.src = player.photo
+  img.alt = player.name
+
+  const name = document.querySelector(".player h2")
+  name.textContent = player.name
+
+  const nickname = document.querySelector(".player em")
+  nickname.textContent = player.nickname
+
+  const likes = document.querySelector(".player .likes")
+  likes.textContent = `${player.likes} Likes`
+
+  player.goals.forEach(renderGoal)
+}
+
+// render the player from the data.js file
+renderPlayer(player)
 
 /***** End of Starter Code ****/
 
@@ -32,15 +60,40 @@ PLAYERS.forEach(renderPlayer)
 
 
 /***** Deliverable 1 *****/
+const header = document.querySelector("h1#header")
 function toggleColor(element) {
-  if (element.style.color === "red") {
-    element.style.color = "black"
+  if (element.target.style.color === "red") {
+    element.target.style.color = "black"
   } else {
-    element.style.color = "red"
+    element.target.style.color = "red"
   }
 }
 
+header.addEventListener("click", toggleColor)
 
 /***** Deliverable 2 *****/
+const likeButton = document.querySelector(".like-button")
+likeButton.addEventListener("click", like)
+
+function like(){
+  const popularity = document.querySelector(".likes")
+  const likes = parseInt(popularity.textContent) + 1
+  popularity.textContent = `${likes} Likes`
+}
 
 /***** Deliverable 3 *****/
+const addGoalVideo = document.querySelector("#new-goal-form")
+addGoalVideo.addEventListener("submit", newGoalVideo)
+
+function newGoalVideo(event) {
+  event.preventDefault() // Need to always add this always always !
+  const link = event.target.link.value
+  const description = event.target.description.value
+  goal = {
+    link: link,
+    description:description
+  }
+  renderGoal(goal)
+  event.target.reset()}
+
+  // Everything seems to work :D 
