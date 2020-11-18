@@ -60,15 +60,40 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
+const header = document.querySelector("h1#header")
 function toggleColor(element) {
-  if (element.style.color === "red") {
-    element.style.color = "black"
+  if (element.target.style.color === "red") {
+    element.target.style.color = "black"
   } else {
-    element.style.color = "red"
+    element.target.style.color = "red"
   }
 }
 
-/***** Deliverable 2 *****/
+header.addEventListener("click", toggleColor)
 
+/***** Deliverable 2 *****/
+const likeButton = document.querySelector(".like-button")
+likeButton.addEventListener("click", like)
+
+function like(){
+  const popularity = document.querySelector(".likes")
+  const likes = parseInt(popularity.textContent) + 1
+  popularity.textContent = `${likes} Likes`
+}
 
 /***** Deliverable 3 *****/
+const addGoalVideo = document.querySelector("#new-goal-form")
+addGoalVideo.addEventListener("submit", newGoalVideo)
+
+function newGoalVideo(event) {
+  event.preventDefault() // Need to always add this always always !
+  const link = event.target.link.value
+  const description = event.target.description.value
+  goal = {
+    link: link,
+    description:description
+  }
+  renderGoal(goal)
+  event.target.reset()}
+
+  // Everything seems to work :D 

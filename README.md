@@ -44,7 +44,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Opened my conosle in the browswer found header. Set a variable for the header. Updated toggle color function to reference the target. Finished with an event listener to the header , so when its clicked on itll go back and forth between colors.
 ```
 
 ## Deliverable 2: Like Button
@@ -53,6 +53,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+Used video for donations/likes as a reference. Found button for like , added the event listener so when clicked on. Needed to parse to int since can not add int to string than push it into the text content for popularity( The number of likes he now has).
 
 ```
 
@@ -78,6 +79,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Again referenced videos. Those videos are amzing. Queryselector for new goal form. Added eventlistener for goal form where submit, my function. Added prevent default so page will not redirect. Got values for link and description , created a goal object with the need atributes. Rendered it .Added reset so that the text field is blank again after submitting. Thanks for the video to use. 
 ```
 
